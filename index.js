@@ -177,7 +177,7 @@ app.post('/loginSubmit', async (req, res) => {
         console.log("user not found");
 
         var html = `
-            Invalid email/password combination.<br><br>
+            User not found.<br><br>
             <a href='/login'>Try again</a>`
 
         res.send(html);
@@ -195,7 +195,7 @@ app.post('/loginSubmit', async (req, res) => {
         console.log("incorrect password");
 
         var html = `
-            Invalid email/password combination.<br><br>
+            Invalid password.<br><br>
             <a href='/login'>Try again</a>`
 
         res.send(html);
