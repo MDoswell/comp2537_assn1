@@ -208,14 +208,12 @@ app.get('/members', (req, res) => {
         res.redirect('/');
         return;
     }
-
-    var html = `<h2>Hello, ${req.session.name}!</h2>How about a vegetable?<br>`;
-
+    
     var pics = ['/broccoli.jpg', '/carrot.jpg', '/pepper.jpg'];
-
-    html += `<img src='${pics[Math.floor(Math.random() * 3)]}' style='width: 250px;'>`;
-
-    console.log(html);
+    
+    var html = `<h2>Hello, ${req.session.name}!</h2>How about a vegetable?<br>
+        <img src='${pics[Math.floor(Math.random() * 3)]}' style='width: 250px;'><br>
+        <button onclick="window.location.href = '/logout'">Sign out</button>`;
 
     res.send(html);
 })
